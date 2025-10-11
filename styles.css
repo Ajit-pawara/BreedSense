@@ -1,0 +1,208 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "SF Pro Display", sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  background: #000;
+}
+
+/* Background Video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(70%) contrast(115%) saturate(120%);
+}
+
+
+
+
+
+/* Hero Section (upper screen) */
+.glass-card {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  max-width: 700px;
+  width: 90%;
+  padding: 45px 35px;
+  text-align: center;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  animation: float 6s ease-in-out infinite alternate;
+}
+
+.glass-card h1 {
+  font-size: 2.6rem;
+  margin-bottom: 15px;
+  text-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Button */
+.cta {
+  padding: 12px 36px;
+  border: none;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #00ffc6, #007aff);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 5px 25px rgba(0, 255, 200, 0.3);
+  transition: all 0.4s ease-in-out;
+}
+.cta:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 35px rgba(0, 255, 200, 0.5);
+}
+
+/* Footer */
+.glass-footer {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+  backdrop-filter: blur(15px);
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translate(-50%, -34.5%); }
+  100% { transform: translate(-50%, -35.5%); }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+
+/* Logo */
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+.logo span {
+  color: #2ad39f;
+  font-weight: 700;
+}
+
+/* Navigation Links */
+nav ul {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 255, 200, 0.25);
+  color: #fff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .glass-nav {
+    width: 96vw;              /* adjust width on mobile */
+    padding: 10px 15px;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul li a {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Navbar - Floating & Always 98% Full-Screen Width */
+.glass-nav {
+  width: 98vw !important;      /* force 98% of viewport width */
+  max-width: none;             /* remove max-width limit */
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 20px;                   /* floating from top */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;               /* make sure it's on top of everything */
+  backdrop-filter: blur(25px) saturate(150%);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 40px;         /* fully rounded edges */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.glass-nav:hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+.glass-nav nav ul li a.active {
+  color: #2ad39f;           /* highlight color */
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 255, 180, 0.3);
+}
+
+
+
